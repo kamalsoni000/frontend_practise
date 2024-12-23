@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <!-- <ul id="item-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul> -->
+
+    <!-- <div id="button-container">
+        <button>Button 1</button>
+        <button>Button 2</button>
+    </div>
+
+    <button id="add-button">Add Button</button> -->
+
+    <form id="user-form">
+        <input type="text" name="username" placeholder="Username">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+    </form>
+
+    <script>
+    
+        // ----------- Method 1 ---------
+        // const itemList=document.getElementById('item-list');
+
+        // itemList.addEventListener("click",(event)=>{
+        //     if(event.target.tagName==="LI"){
+        //         console.log(`clicked on ${event.target.textContent}`);
+        //     }
+        // })
+
+        // ------------ Method 2 with complex Thing  ---------
+        // const buttonContainer= document.getElementById("button-container");
+        // const addbutton=document.getElementById("add-button");
+
+        // buttonContainer.addEventListener("click",(e)=>{
+        //     if(e.target.tagName==="BUTTON"){
+        //         console.log(`Clicked on ${e.target.textContent}`);
+        //     }
+        // })
+        // addbutton.addEventListener("click",(e)=>{
+        //     const neButton=document.createElement("button");
+        //     neButton.textContent=`Button ${buttonContainer.children.length+1}`;
+        //     buttonContainer.appendChild(neButton);
+        // })
+
+         const userForm=document.getElementById("user-form");
+
+         userForm.addEventListener("input",(e)=>{
+            const {name,value}=e.target;
+            console.log(`Changed ${name} : ${value}`);
+         })
+
+    </script>
+</body>
+</html>

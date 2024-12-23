@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="parent">
+        <button id="child">Click me</button>
+    </div> -->
+
+    <ul id="product-list">
+        <li><button id="item1-buy">Buy Now</button></li>
+        <li><button id="item2-buy">Buy Now</button></li>
+    </ul>
+    <script>
+        // const parent=document.getElementById("parent");
+        // const child=document.getElementById("child");
+
+        // parent.addEventListener("click",(e)=>{
+        //     if(e.target && e.target.id==="child"){
+        //         console.log('Clicked on Child');
+        //     }
+        // })
+        // child.addEventListener("click",(e)=>{
+        //     e.stopPropagation();
+        //     console.log('Clicked on Child');
+        // })
+        const productList = document.getElementById('product-list');
+
+        productList.addEventListener('click', handleBuyClick);
+
+        function handleBuyClick(event) {
+            // Check if the clicked element is a button within the list
+            if (event.target.tagName.toLowerCase() === 'button') {
+                console.log('Buy button clicked for item:', event.target.textContent);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
