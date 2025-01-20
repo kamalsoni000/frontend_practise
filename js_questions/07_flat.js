@@ -44,39 +44,39 @@
 // --------------- Flatten an Object in Js --------------------
 
 // Declare an object
-let ob = {
-    Company: "GeeksforGeeks",
-    Address: "Noida",
-    contact:999999999,
-    mentor: {
-        HTML: "GFG",
-        CSS: "GFG",
-        JavaScript: "GFG",
-        other:{
-            age:12,
-            kamal:{
-                k:'a'
-            }
-        }
-    }
-};
+// let ob = {
+//     Company: "GeeksforGeeks",
+//     Address: "Noida",
+//     contact:999999999,
+//     mentor: {
+//         HTML: "GFG",
+//         CSS: "GFG",
+//         JavaScript: "GFG",
+//         other:{
+//             age:12,
+//             kamal:{
+//                 k:'a'
+//             }
+//         }
+//     }
+// };
 
-function FlattenObject(obj){
-    let res={};
-    for(let x in obj){
-        if(typeof obj[x]==="object" && !Array.isArray(obj[x])){
-            const temp=FlattenObject(obj[x]);
-            for(let i in temp){
-                res[x+'.'+i]=temp[i];
-            }
+// function FlattenObject(obj){
+//     let res={};
+//     for(let x in obj){
+//         if(typeof obj[x]==="object" && !Array.isArray(obj[x])){
+//             const temp=FlattenObject(obj[x]);
+//             for(let i in temp){
+//                 res[x+'.'+i]=temp[i];
+//             }
 
-        }else{
-          res[x]=obj[x];
-        }
-    }
-    return res;
-}
-console.log(FlattenObject(ob))
+//         }else{
+//           res[x]=obj[x];
+//         }
+//     }
+//     return res;
+// }
+// console.log(FlattenObject(ob))
 
 // output 
 // {
@@ -87,3 +87,38 @@ console.log(FlattenObject(ob))
 //   'mentor.CSS': 'GFG',
 //   'mentor.JavaScript': 'GFG'
 // }
+
+
+let ob = {
+    Company: "GeeksforGeeks",
+    Address: "Noida",
+    contact:[],
+    mentor: {
+        HTML: "GFG",
+        CSS: "GFG",
+        JavaScript: "GFG",
+        extra:{
+            j:"a"
+        }
+    }
+};
+
+function FlattenObject(obj){
+    let res={};
+    for(let x in obj){
+        if(typeof obj[x]==="object" && !Array.isArray(obj[x])){
+            console.log('obj[x]',obj[x]);
+            const temp=FlattenObject(obj[x]);
+            console.log('temp',temp);
+            for(let i in temp){
+                res[x+'.'+i]=temp[i];
+            }
+
+        }else{
+          res[x]=obj[x];
+        }
+    }
+    return res;
+}
+
+console.log(FlattenObject(ob));

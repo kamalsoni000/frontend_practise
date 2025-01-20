@@ -1,0 +1,75 @@
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .face {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    background: white;
+    border: 8px solid black; /* Border around the clock */
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hourMark {
+    position: absolute;
+    width: 6px; /* Width of hour marks */
+    height: 20px; /* Length of hour marks */
+    background: black;
+    top: 10px; /* Distance from the top edge */
+    left: calc(50% - 3px); /* Center the marks */
+    transform-origin: 50% 150px; /* Origin for rotation */
+  }
+  
+  .hourHand {
+    position: absolute;
+    width: 8px; /* Width of the hour hand */
+    height: 90px; /* Length of the hour hand */
+    background: black;
+    top: calc(50% - 90px); /* Position based on hand length */
+    left: calc(50% - 4px); /* Center the hand */
+    transform-origin: 50% 100%; /* Origin for rotation */
+    border-radius: 4px; /* Smooth edges */
+    z-index: 3; /* Ensure it appears on top */
+  }
+  
+  .minuteHand {
+    position: absolute;
+    width: 6px; /* Width of the minute hand */
+    height: 120px; /* Length of the minute hand */
+    background: black;
+    top: calc(50% - 120px);
+    left: calc(50% - 3px);
+    transform-origin: 50% 100%;
+    border-radius: 3px;
+    z-index: 2;
+  }
+  
+  .secondHand {
+    position: absolute;
+    width: 2px; /* Width of the second hand */
+    height: 140px; /* Length of the second hand */
+    background: red;
+    top: calc(50% - 140px);
+    left: calc(50% - 1px);
+    transform-origin: 50% 100%;
+    border-radius: 2px;
+    z-index: 4;
+  }
+  
+  .centerDot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    z-index: 5;
+  }
+  

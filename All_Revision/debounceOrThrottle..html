@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce</title>
+</head>
+
+<body>
+    <input type="text" id="serachbox" placeholder="Search anything" />
+    <script>
+        // debounce part
+    
+        const debounce=(callbackFun,delay)=>{
+            let timerId;
+            return (...args)=>{
+                clearTimeout(timerId);
+                timerId=  setTimeout(() => {
+                    callbackFun.apply(this,args)
+                }, delay);
+            }
+        }
+
+       const handleSearch=debounce((args)=>{
+        console.log('handleSearch',args)
+       },2000);
+        // This is the exmaple of debounce in js
+        document.getElementById("serachbox").addEventListener("input",(event)=>{
+            handleSearch(event.target.value);
+        })
+
+        //Throttle part
+
+        function throttle(func,delay){
+            let throttle;
+          return function(...args){
+            if(!throttle){
+                func.apply(this,args);
+                throttle=true;
+                setTimeout(() => {
+                    throttle=false;
+                }, delay);
+            }
+          }
+        }
+
+
+        const handleResize=throttle(()=>{
+            console.log('throttle handleResize');
+        },2000);
+
+        window.addEventListener("resize",handleResize);
+    </script>
+</body>
+
+</html>

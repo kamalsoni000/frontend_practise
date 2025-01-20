@@ -1,0 +1,14 @@
+.jobCard{
+    margin-top: 4px;
+    border: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.103);
+    width: 500px;
+    padding: 10px;
+}
+.jobDetail{
+    display: flex;
+    justify-content: space-between;
+}
+.jobTitle{
+    text-decoration: underline;
+}

@@ -29,11 +29,11 @@
 // console.log(b);
 
 // Function Scoped Variable
-// function kml(){
-//     console.log(name);
-//      var name="kml"
-// }
-// kml()
+function kml(){
+    console.log(name);
+     var name="kml"
+}
+kml()
 
 // x=10;
 // console.log('x',x);
@@ -164,12 +164,12 @@
 // setTimeout(obj.sayName.bind(obj), 3000);
 
 // object.create();
-// let obj= Object.create({
-//     name:"ajju"
-// });
-// console.log(obj.name);
-// delete obj.name;
-// console.log(obj.name);
+let obj= Object.create({
+    name:"ajju"
+});
+console.log(obj.name);
+delete obj.name;
+console.log(obj.name);
 
 // let obj={
 //     name:"ajju",

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer</title>
+</head>
+<body>
+    <button>Click me to 1</button>
+    <button>Click me to 2</button>
+    <script>
+        class Observer{
+            constructor(){
+                this.observer=[];
+            }
+            subscribe(fun){
+                this.observer.push(fun);
+            }
+            unsubscribe(fun){
+                this.observer=this.observer.filter((obs)=>obs!==fun);
+            }
+            notify(data){
+                this.observer.forEach((obs)=>obs(data));
+            }
+        }
+    </script>
+</body>
+</html>
